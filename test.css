@@ -1,8 +1,15 @@
-#img {
+#mushroom {
   width: 100px;
   height: 100px
 }
-
+#Olive {
+  width: 100px;
+  height: 100px
+}
+#pepperoni {
+  width: 100px;
+  height: 100px
+}
 .title {
   font-size: 75px;
   text-align: center;
@@ -19,7 +26,6 @@
     font-style: italic;
     font-weight: bold;
     text-align: center}
-body {background-image: url("https://d13yacurqjgara.cloudfront.net/users/1076788/screenshots/2884867/pizza-party_1x.jpg")
 }
 h2 {text-align: center;
 font-style: italic}
