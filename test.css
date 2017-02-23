@@ -1,6 +1,6 @@
 #mushroom {
-  width: 100px;
-  height: 100px
+  width: 50px;
+  height: 50px
 }
 #Olive {
   width: 100px;
@@ -26,6 +26,8 @@
     font-style: italic;
     font-weight: bold;
     text-align: center}
+body {
+    background-color: lightblue;
 }
 h2 {text-align: center;
 font-style: italic}
