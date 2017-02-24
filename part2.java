@@ -1,25 +1,29 @@
-								var countA = 0;
+var countA = 0;
                 var countB = 0;
                 var countC = 0;
                 var countD = 0;
                 function Pepperoni(){
-                    countA += 1;
+                    countA += 4;
                     document.getElementById('para1').innerHTML = "$"+countA;
                 }
                 function Mushroom(){
-                    countB += 1.5;
+                    countB += 3;
                     document.getElementById('para2').innerHTML = "$"+countB;
                 }
                 function Bellpepper(){
-                    countC += 2;
-                    document.getElementById('para3').innerHTML =  "$"+countD;
+                    countC += 3.5;
+                    document.getElementById('para3').innerHTML = "$"+countC;
+                }
+                function Blackolive(){
+                    countD += 3.25;
+                    document.getElementById('para4').innerHTML = "$"+countD;
                 }
                 function total(){
                     var total = 0;
                     var tax = 0;
                     var sum = 0;
                     total = countA+countB+countC+countD;
-                    tax = total*0.10
+                    tax = total*0.05
                     sum = total + tax
                     document.getElementById('total').innerHTML = "$"+total;
                     document.getElementById('tax').innerHTML = "$"+tax;
@@ -46,3 +50,17 @@
                     var Order = toppings.split(",");
                     for (var i = 0; i < Order.length; i++){
                         Order[i] = Order[i].trim();
+                    }
+                    if(Order== "pepperoni"){
+                        Pepperoni();
+                    }
+                    else if(Order == "mushroom"){
+                        Mushroom();
+                    }
+                    else if(Order == "bell pepper"){
+                        Bellpepper();
+                    }
+                    else if(Order == "black olives"){
+                        Blackolive();
+                    }
+                }
