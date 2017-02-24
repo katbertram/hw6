@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC
+<html>
+
+<head>
+    <style type="text/css"></style>
+    <script src="part2.js">
+    </script>
+    <title>Hw6</title>
+    <style>
+        #title {
+            display: flex;
+            justify-content: center;
+            font-size: 60px;
+            color: red
+        }
+        
+        .toppings {
+            display: flex;
+            justify-content: space-between;
+            font-size: 25px
+        }
+        
+        .total {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 20px
+        }
+        
+        .clear {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 20px
+        }
+        
+        .hide {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 20px;
+            color: darkgreen
+        }
+        
+        .receipt {
+            display: flex;
+            justify-content: center;
+            font-size: 25px
+        }
+        
+        #extra {
+            font-style: italic;
+            text-align: center;
+            border-style: solid;
+            font-size: 20px
+        }
+    </style>
+    <script type="text/javascript">
+        var countA = 0;
+        var countB = 0;
+        var countC = 0;
+        var countD = 0;
+
+        function mushroom() {
+            countA += 4;
+            document.getElementById('para1').innerHTML = "$" + countA;
+        }
+
+        function olives() {
+            countB += 3;
+            document.getElementById('para2').innerHTML = "$" + countB;
+        }
+
+        function Bellpepper() {
+            countC += 3.5;
+            document.getElementById('para3').innerHTML = "$" + countC;
+        }
+
+        function Blackolive() {
+            countD += 3.25;
+            document.getElementById('para4').innerHTML = "$" + countD;
+        }
+
+        function total() {
+            var total = 0;
+            var tax = 0;
+            var sum = 0;
+            total = countA + countB + countC + countD;
+            tax = total * 0.05
+            sum = total + tax
+            document.getElementById('total').innerHTML = "$" + total;
+            document.getElementById('tax').innerHTML = "$" + tax;
+            document.getElementById('sum').innerHTML = "$" + sum;
+        }
+
+        function Clear() {
+            countA = 0;
+            countB = 0;
+            countC = 0;
+            countD = 0;
+            total = 0;
+            tax = 0;
+            sum = 0;
+            document.getElementById('para1').innerHTML = "$" + 0;
+            document.getElementById('para2').innerHTML = "$" + 0;
+            document.getElementById('para3').innerHTML = "$" + 0;
+            document.getElementById('para4').innerHTML = "$" + 0;
+            document.getElementById('total').innerHTML = "$" + 0;
+            document.getElementById('tax').innerHTML = "$" + 0;
+            document.getElementById('sum').innerHTML = "$" + 0;
+        }
+
+        function Order() {
+            var toppings = document.getElementById("order").value;
+            var Order = toppings.split(",");
+            for (var i = 0; i < Order.length; i++) {
+                Order[i] = Order[i].trim();
+            }
+            if (Order == "pepperoni") {
+                Pepperoni();
+            } else if (Order == "mushroom") {
+                Mushroom();
+            } else if (Order == "bell pepper") {
+                Bellpepper();
+            } else if (Order == "black olives") {
+                Blackolive();
+            }
+        }
+    </script>
+</head>
+
+<body bgcolor="lightblue">
+    <p id="title">Pizza Plaza</p>
+    <p id="extra">Please choose your toppings you would like on your pizza</p>
+    <p class="toppings"><a>Mushroom </a> <a id="para1">$0</a> <button onclick="mushroom()">Add</button><br>
+        <img height="300" src="http://weknowyourdreams.com/images/mushroom/mushroom-07.jpg" width="300"></p>
+    <p class="toppings"><a>Olives </a> <a id="para2">$0</a> <button onclick="olives()">Add</button><br>
+        <img height="280" src="http://www.clipartkid.com/images/824/sliced-black-olive-sliced-black-olives-JsEgz9-clipart.jpg" width="280"></p>
+    <p class="toppings"><a>Pepperoni </a> <a id="para3">$0</a> <button onclick="Bellpepper()">Add</button><br>
+        <img height="300" src="https://tacogrip.com/wp-content/uploads/2015/06/pepperoni.png" width="300"></p>
+    <p class="toppings"><a>Type in extra toppings:</a> <input id="order"> <button onclick="Order()">Submit</button></p>
+    <p class="receipt">Receipt</p>
+    <p class="toppings"><a>Subtotal</a> <a id="total">$0</a> <a class="hide">_______</a></p>
+    <p class="toppings"><a>Tax (10%)</a> <a id="tax">$0</a> <a class="hide">_______</a></p>
+    <p class="toppings"><a>Total</a> <a id="sum">$0</a></p><button onclick="total()">Click for reciept</button><br>
+    <p class="clear"><button onclick="Clear()">Reset</button></p>
+</body>
+
+</html>
