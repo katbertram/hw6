@@ -2,11 +2,11 @@ var countA = 0;
                 var countB = 0;
                 var countC = 0;
                 var countD = 0;
-                function Pepperoni(){
+                function mushroom(){
                     countA += 4;
                     document.getElementById('para1').innerHTML = "$"+countA;
                 }
-                function Mushroom(){
+                function olives(){
                     countB += 3;
                     document.getElementById('para2').innerHTML = "$"+countB;
                 }
